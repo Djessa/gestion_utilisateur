@@ -1,5 +1,5 @@
 <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
-    <a href="{{ path('home') }}" class="navbar-brand"><h1>App</h1></a>
+    <a href="{{ path('home') }}" class="navbar-brand"><h1 class="text-primary">App</h1></a>
     {% if app.user %}
     <ul class="navbar-nav mx-auto">
     {% for role in app.user.roles %}
