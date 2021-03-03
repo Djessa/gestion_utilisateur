@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between">
             <h1 class="h4">Liste des utilisateur</h1>
-            <a href="{{ path('user_new') }}">Ajouter un nouveau utilisateur</a>
+            <a href="{{ path('user_new') }}" class="btn btn-primary">Ajouter un nouveau utilisateur</a>
         </div>
         <div class="card-body">
             <table class="table">
@@ -30,8 +30,8 @@
                         <td>{{ user.email }}</td>
                         <td>{{ user.role }}</td>
                         <td>
-                            <a href="{{ path('user_show', {'id': user.id}) }}">Afficher</a>
-                            <a href="{{ path('user_edit', {'id': user.id}) }}">Modifier</a>
+                            <a href="{{ path('user_show', {'id': user.id}) }}" class="btn-sm btn-info">Afficher</a>
+                            <a href="{{ path('user_edit', {'id': user.id}) }}" class="btn-sm btn-warning">Modifier</a>
                         </td>
                     </tr>
                 {% else %}

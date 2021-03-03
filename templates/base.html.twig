@@ -5,6 +5,11 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %} <link rel="stylesheet" href="{{ asset('bootstrap.min.css') }}"> {% endblock %}
     </head>
+    <style>
+        .btn-sm {
+            text-decoration: none !important;
+        }
+    </style>
     <body>
         {% include "parts/_header.html.twig" %}
         <div class="container mt-3">
