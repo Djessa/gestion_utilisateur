@@ -1,15 +1,21 @@
 <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
     <a href="{{ path('home') }}" class="navbar-brand"><h1 class="text-primary">App</h1></a>
     {% if app.user %}
-    <ul class="navbar-nav mx-auto">
-    {% for role in app.user.roles %}
-        {% if role == 'ROLE_ADMIN' %}
-            <li class="nav-item {{ nav_user is defined ? 'active': '' }}"><a href="{{ path('user_index') }}" class="nav-link">Gérer les utilisateurs</a></li>
-        {% endif %}
-    {% endfor %}
-    </ul>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item"><a href="{{ path('app_logout') }}" class="nav-link">Déconnexion</a></li>
-    </ul>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <hr class="my-3">
+        <ul class="navbar-nav mx-auto">
+        {% for role in app.user.roles %}
+            {% if role == 'ROLE_ADMIN' %}
+                <li class="nav-item {{ nav_user is defined ? 'active': '' }}"><a href="{{ path('user_index') }}" class="nav-link">Gérer les utilisateurs</a></li>
+            {% endif %}
+        {% endfor %}
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a href="{{ path('app_logout') }}" class="nav-link">Déconnexion</a></li>
+        </ul>
+    </div>
     {% endif %}
 </nav>
