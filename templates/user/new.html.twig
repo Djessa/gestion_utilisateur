@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit User{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h1 class="h4 text-center">Ajouter un utilisateur</h1>
+
+            {{ include('user/_form.html.twig') }}
+
+            <div class="text-center mt-3">
+                <a href="{{ path('user_index') }}" class="btn btn-secondary">Retour</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

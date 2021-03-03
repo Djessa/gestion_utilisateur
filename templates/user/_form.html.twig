@@ -1,0 +1,20 @@
+{{ form_start(form) }}
+    {{ form_row(form.first_name)}}
+    {{ form_row(form.last_name)}}
+    {{ form_row(form.email)}}
+    {% if add is defined %}
+    <div class="form-group">
+        <label class="required" for="user_role">Role</label>
+        <select id="user_role" name="role" class="form-control">
+            <option value=""></option>
+            <option value="ROLE_USER">Simple utilsateur</option>
+            <option value="ROLE_ADMIN">Administrateur</option>
+        </select>
+    </div>
+    {% endif %}
+    {% if form.password is defined %}
+        {{ form_row(form.password)}}
+    {% endif %}
+
+    <button class="btn btn-block btn-success">{{ button_label|default('Enregistrer') }}</button>
+{{ form_end(form) }}
