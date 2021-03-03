@@ -56,7 +56,8 @@ class UserController extends AbstractController
         return $this->render('user/new.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
-            'add' => true
+            'add' => true,
+            'nav_user' => true
         ]);
     }
 
@@ -67,6 +68,7 @@ class UserController extends AbstractController
     {
         return $this->render('user/show.html.twig', [
             'user' => $user,
+            'nav_user' => true
         ]);
     }
 
@@ -87,6 +89,7 @@ class UserController extends AbstractController
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
+            'nav_user' => true
         ]);
     }
 
