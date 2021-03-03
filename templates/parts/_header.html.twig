@@ -1,10 +1,10 @@
-<nav class="container-fluid navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light">
     <a href="{{ path('home') }}" class="navbar-brand"><h1>App</h1></a>
     {% if app.user %}
     <ul class="navbar-nav mx-auto">
     {% for role in app.user.roles %}
         {% if role == 'ROLE_ADMIN' %}
-            <li class="nav-item"><a href="{{ path('user_index') }}" class="nav-link">Gérer les utilisateurs</a></li>
+            <li class="nav-item {{ nav_user is defined ? 'active': '' }}"><a href="{{ path('user_index') }}" class="nav-link">Gérer les utilisateurs</a></li>
         {% endif %}
     {% endfor %}
     </ul>
